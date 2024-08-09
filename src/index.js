@@ -7,10 +7,13 @@ import "./styles.css";
 // Function to fetch dashboard data after successful login
 async function fetchDashboard() {
   try {
-    const response = await fetch("http://93.127.215.107:3000/users", {
-      method: "GET",
-      credentials: "include",
-    });
+    const response = await fetch(
+      "https://api-project-psi-navy.vercel.app/users",
+      {
+        method: "GET",
+        credentials: "include",
+      }
+    );
 
     if (!response.ok) {
       throw new Error("Failed to fetch dashboard");

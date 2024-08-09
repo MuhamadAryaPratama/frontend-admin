@@ -64,7 +64,9 @@ class EditResto extends HTMLElement {
     }
 
     try {
-      const response = await fetch(`http://93.127.215.107:3000/${provinsi}`);
+      const response = await fetch(
+        `https://api-project-psi-navy.vercel.app/${provinsi}`
+      );
       if (!response.ok) {
         throw new Error(`HTTP error! Status: ${response.status}`);
       }
@@ -151,7 +153,7 @@ class EditResto extends HTMLElement {
       if (newName && newDescription && newGoogleMapsLink && newRating) {
         try {
           const response = await fetch(
-            `http://93.127.215.107:3000/${provinsi}/${id}`,
+            `https://api-project-psi-navy.vercel.app/${provinsi}/${id}`,
             {
               method: "PUT",
               headers: {
@@ -212,7 +214,7 @@ class EditResto extends HTMLElement {
     if (confirmation.isConfirmed) {
       try {
         const response = await fetch(
-          `http://93.127.215.107:3000/${provinsi}/${id}`,
+          `https://api-project-psi-navy.vercel.app/${provinsi}/${id}`,
           {
             method: "DELETE",
           }

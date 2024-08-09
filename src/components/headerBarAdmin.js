@@ -41,12 +41,15 @@ class headerBarAdmin extends HTMLElement {
     event.preventDefault();
 
     try {
-      const response = await fetch("http://93.127.215.107:3000/logout", {
-        method: "DELETE", // Menggunakan method DELETE
-        headers: {
-          "Content-Type": "application/json",
-        },
-      });
+      const response = await fetch(
+        "https://api-project-psi-navy.vercel.app/logout",
+        {
+          method: "DELETE", // Menggunakan method DELETE
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
 
       if (response.ok) {
         // Logout successful, redirect to login page

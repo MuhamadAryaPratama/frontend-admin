@@ -102,13 +102,16 @@ class AddNewResto extends HTMLElement {
     };
 
     try {
-      const response = await fetch(`http://93.127.215.107:3000/${provinsi}`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data),
-      });
+      const response = await fetch(
+        `https://api-project-psi-navy.vercel.app/${provinsi}`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(data),
+        }
+      );
 
       if (response.ok) {
         Swal.fire({
